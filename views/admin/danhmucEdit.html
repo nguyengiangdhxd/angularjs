@@ -1,0 +1,55 @@
+    <button type="button" class="close" ng-click="cancel();">
+        <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+    </button>
+    <div class="modal-header">
+        <h3 class="modal-title">Edit danh mục [ID: {{danhmuc.id_danh_muc}}]</h3>
+    </div>
+    <div class="modal-body">
+        <form name="product_form" class="form-horizontal" role="form" novalidate>
+            <form-element label="Tên danh mục" mod="danhmuc">
+                <input type="text" class="form-control" name="ten_danh_muc" placeholder="Tên danh mục" ng-model="danhmuc.ten_danh_muc" focus/>
+                
+            </form-element>
+            <form-element label="Tiêu đề" mod="danhmuc">
+            <textarea class="form-control" name="tieu_de" placeholder="Tiêu đề" ng-model="danhmuc.tieu_de">{{danhmuc.tieu_de}}</textarea>
+            </form-element>
+            <form-element label="Vị trí" mod="danhmuc">
+                <input type="text" name="vi_tri" class="form-control" placeholder="vị trí menu" ng-model="danhmuc.vi_tri"  only-numbers/>
+                
+            </form-element>
+
+           <form-element label="Danh mục cha" mod="danhmuc">
+                <input type="text" name="danh_muc_cha" class="form-control" placeholder="Danh mục cha" ng-model="danhmuc.danh_muc_cha"/>
+                
+            </form-element>
+
+            <form-element label="Tình trạng" mod="danhmuc">
+                <select name="tinh_trang" class="form-control" ng-model="danhmuc.tinh_trang">
+                    <option value="1">Enable</option>
+                    <option value="0">Disable</option>
+                </select>
+                
+            </form-element>
+
+            <form-element label="Ảnh" mod="danhmuc">
+                <input type="text" name="anh" class="form-control" placeholder="Ảnh" ng-model="danhmuc.anh"/>
+                
+            </form-element>
+
+            <div class="space"></div>
+            <div class="space-4"></div>
+            <div class="modal-footer">
+                <form-element label="">
+                    <div class="text-right">
+                        <a class="btn btn-sm" ng-click="cancel()"><i class="ace-icon fa fa-reply"></i>Cancel</a>
+                        <button ng-click="saveDanhmuc(danhmuc);"
+                                class="btn btn-sm btn-primary"
+                                type="submit">
+                            <i class="ace-icon fa fa-check"></i>{{buttonText}}
+                        </button>
+                    </div>
+                </form-element>
+            </div>
+        </form>
+    </div>
+

@@ -1,0 +1,59 @@
+<footer ng-controller="footerCtrl">
+        <ul>
+    <li ng-repeat="dm in dm_footer">
+        
+        <div class="text">
+            <h3>{{dm.ten_danh_muc}}</h4>
+            <div ng-repeat="c in dm.mang_tin">
+                <a ng-if="c.duong_dan != ''" href="{{c.duong_dan}}" title="{{c.tieu_de}}">{{c.ten_tin}}</a>
+                <span ng-if="c.duong_dan == ''">{{c.ten_tin}}</span>
+            </div>
+            
+        </div>
+    </li>
+    
+</ul>
+
+<div class="bar">
+    <div class="bar-wrap">
+        <div class="social">
+            <ul class="links" ng-controller="headerCtrl">
+                <li ng-repeat="dm in headerDM | filter:{da_cap:1}">
+                    <a id="link-products-2" onclick="window.scrollTo(0,0)" href="#">{{dm.ten_danh_muc}}</a>
+                </li>
+                <li ng-repeat="dm in headerDM | filter:{da_cap:0}">
+                    <a class="support" onclick="window.scrollTo(0,0)" href="#/news-{{dm.id_danh_muc}}/{{dm.tieu_de_khong_dau}}.html" title="{{dm.ten_danh_muc}}">{{dm.ten_danh_muc}}</a>
+                </li>
+                
+            
+                <!-- facebook -->
+                <script>(function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5";
+                  fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+                <li><div class="fb-share-button" data-href="http://enviepro.com/#/" data-layout="button_count"></div></li>
+            
+                <!-- google+. -->
+                <script src="https://apis.google.com/js/platform.js" async defer>
+                  {lang: 'vi'}
+                </script>
+                <li><g:plusone></g:plusone></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="bar">
+
+    <div class="bar-wrap">
+        
+        <div class="clear"></div>
+        <div class="copyright">2015 &copy; Công ty cổ phần điện tử ENVIE Việt Nam<br><br>
+            Địa chỉ : Số 10 ngõ 4/1 Phố Đồng Me, Mễ Trì, Nam Từ Liêm
+        </div>
+    </div>
+</div>
+    </footer>

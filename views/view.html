@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="css/bootstrap.min_da_sua.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="./libs/categorybrowse-libs.js"></script>
+  
+<div class="parbase browsebar">
+	<div id="browsebar-wrapper">
+    <div id="browsebar" class="">
+    	<div id="browsebar-in">
+        <div class="container">
+            <div id="browsebar-name">
+                <h1 class="name">Duyệt tất cả {{danhmuc_view['ten_danh_muc']}}</h1>
+                
+            </div>
+            
+            </div>  
+        </div>
+        <!--end #browsebar-buyslide--> 
+    </div>
+	</div>
+
+<div class="parbase categoryoverview">
+<div id="categorybrowse-header" class=" bgLight copyguard">
+    <div class="container">
+	<div class="breadcrumbs breadcrumbs-flyout" ng-show="danhmuc_view.danh_muc_cha !=''"><div class="flyout"><p><img src="./libs/flyout.png" width="21" height="21" alt="atltext"></p></div><ol><li><a class="support" href="#/view-{{danhmuc_view['danh_muc_cha']}}/{{danhmuc_view['ten_danh_muc_cha']}}">{{danhmuc_view['ten_danh_muc_cha']}}</a></li>
+		
+		</ol></div>
+	</div>
+	<div class="title-block">
+            <h2 class="header1">{{danhmuc_view['ten_danh_muc']}}</h2>
+            <p class="subheader2"></p>
+        </div>
+</div>
+</div>
+<div class="parbase filter">
+<div id="filterbar-wrapper">
+		<div id="filterbar" class="">
+			<div id="filterbar-in">
+				<div class="container">
+					<div id="categoryselect">
+    
+					    <div class="hide-block" style="display: none;">
+					        <div class="categoryselect-box-wrapper">
+					            <div class="categoryselect-box" style="overflow: hidden; padding: 0px; width: 150px; height: 146px;">
+					                        
+					                    
+					                <div class="jspContainer" style="width: 150px; height: 146px;"><div class="jspPane" style="padding: 0px; top: 0px; width: 250px;"><div class="jScrollbar_mask">
+					                            <dl ng-if="danhmuc_cung.length > 0">
+					                                <dt>
+														<a href="#/view-{{danhmuc_view['danh_muc_cha']}}/{{danhmuc_view['ten_danh_muc_cha']}}">{{danhmuc_view['ten_danh_muc_cha']}}</a>
+													</dt>
+					                                   <dd ng-repeat="cung in danhmuc_cung">
+														<a href="#/view-{{cung['id_danh_muc']}}/{{cung['ten_danh_muc']}}">{{cung['ten_danh_muc']}}</a>
+													</dd>
+													<dd><span class="active">{{danhmuc_view['ten_danh_muc']}} </span>
+													</dd>
+					                                    </dl>
+					                        </div></div></div></div>
+					            </div>
+					        </div>
+						</div>
+					<div id="sortby">
+						<div class="hide-block" style="display: none;">
+							<div class="sortby-box-wrapper">
+								<div class="sortby-box">
+									<dl>
+										<dd><input style="border:2px solid #456879;	border-radius:10px;" type="text" id="s" placeholder="Lọc kết quả tại đây" ng-model="filtertinbai_view" ng-change="resetLimit();"  autocomplete="off" autocomplete="on" value="Tìm kiếm tại đây"></dd>
+										
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="filterbar-more"><a href="javascript:void(0);"><span class="mfilters show">Lọc thêm</span><span class="hfilters hid">Ẩn bộ lọc</span></a></div>
+		</div> 
+		
+</div>
+</div>
+
+
+<div class="result parbase"><div id="results-header">
+    <div class="container">
+		<h3 class="subheader1">
+	        	<span>Có {{(tinbai_view | filter: filtertinbai_view).length}} sản phẩm</span></h3>
+        
+    </div>
+</div>
+<div id="results-contents">
+    <div class="container">
+    <form>
+        <div class="category-products">
+            <div class="product-box" ng-repeat="p in tinbai_view | filter: filtertinbai_view">
+				<div class="product-box-in" style="height: 350px;"  ng-click="open(p);">
+					<div>
+						<a>
+							<div class="product-image"><img src="images/{{p.anh_lon}}" alt="{{p.tieu_de}}" title="{{p.tieu_de}}">
+								<div class="product-colors">
+									<ul>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="product-copy" style="height: 62px;">
+								<p class="productname">{{p.tieu_de}}</p>
+								<p class="caption"></p>
+							</div>
+						</a>
+						<div class="product-price" style="height: 0px;" >
+									<span class="prefix">{{p.ten_danh_muc}}</span>
+						</div><br>
+						<div class="notes">Nhà sản xuất: Envie</div>	
+					</div>
+				</div>
+				<!-- end #product-box-in -->
+		
+			</div>
+
+			<div ng-show="(tinbai_view | filter: filtertinbai_view).length <=0">
+				<div  style="height: 350px;">
+				</div>
+			</div>
+
+		</div><!-- end .category-products -->
+    </form>
+    </div>
+</div></div>
+</div>

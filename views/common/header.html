@@ -1,0 +1,57 @@
+<script type="text/javascript" src="./libs/common-clientlibs.js"></script>
+<script type="text/javascript" src="./libs/common-libs.js"></script>
+<div class="masthead">
+      <header id="globalheader">
+    <div class="container">
+      <div id="brandlogo" ng-controller="logoCtrl">
+        <a href="#" title="Envie"><img width="170" height="70" title="Envie" alt="Envie" src="./images/{{logo}}"></a></div>
+
+      <div class="toggleMenu">
+        <a href="javascript:void(0);"></a>
+      </div>
+      <div id="search-normal">
+          <div class="search-normal-mobile-label"></div>
+          <div class="search-normal-box">
+            <div class="search-normal-box-in">
+              <form role="search" id="searchformhead" action="#" method="post" class="no-submitform">
+                <label for="s" class="assistivetext">Tìm kiếm tại đây</label>
+                <input type="text" id="s" class="field placeholder no-submit" name="q" autocomplete="on" value="Tìm kiếm tại đây">
+                <input type="hidden" name="searchIn" value="">
+                <input type="hidden" name="_charset_" value="utf-8">
+                <button type="submit" class="submit"><img src="./libs/icn-search.png" alt="Tìm kiếm tại đây"></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      <div id="globalheader-nav" ng-controller="headerCtrl">
+        <nav>
+          <ul class="main_menu">
+            <li class="" >
+              <a id="link-products" class="link-products consumer link-megaPanel" data-panelnav-id="L2NvbnRlbnQvcGFuYXNvbmljL3ZuL3ZpL3N5c3RlbS13cmFwcGVyL2NvbnN1bWVy" href="#" title="{{headerDM[0].ten_danh_muc}}">{{headerDM[0].ten_danh_muc}}</a><span id="kt_menu" class="kt_menu_chua_kh"></span></li>
+            <li ng-repeat="dm in headerDM | filter:{da_cap:0}">
+              <a class="support" href="#/news-{{dm.id_danh_muc}}/{{dm.tieu_de_khong_dau}}.html" title="{{dm.ten_danh_muc}}">{{dm.ten_danh_muc}}</a></li>
+            
+          </ul>
+        </nav>
+      </div>
+		
+	</div>
+    </header>
+    <!--header-->
+
+    <div id="navmenucat" class="megapannel-container" ng-controller="headerCtrl">
+      <div class="hide" style="display: none;">
+      <div id="L2NvbnRlbnQvcGFuYXNvbmljL3ZuL3ZpL3N5c3RlbS13cmFwcGVyL2NvbnN1bWVy" class="megapannel">
+        <div ng-bind-html="headerHTML"></div>
+		<div class="panfoot">
+						<div class="container">
+							<p class="browseall"><a href=""></a></p>
+						</div>
+					</div>
+	  </div>
+      
+    </div>
+    
+	</div>
+  
+  </div>

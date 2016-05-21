@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/system.*
+RewriteRule ^(.*)$ index.php?/$1&%{QUERY_STRING} [L]
+RewriteRule lg_captcha.jpg lg_captcha.php
+RewriteRule captcha.jpg captcha.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?/$1&%{QUERY_STRING} [L]
+RewriteCond %{HTTP_HOST} ^gmax\.vn$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.gmax\.vn$
+RewriteRule ^/?$ "http\:\/\/enviepro\.com" [R=301,L]
+

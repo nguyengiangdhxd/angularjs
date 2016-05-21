@@ -1,0 +1,82 @@
+    <script type='text/javascript' src="ckeditor/ckeditor.js"></script>
+
+    <button type="button" class="close" ng-click="cancel();">
+        <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+    </button>
+    <div class="modal-header">
+        <h3 class="modal-title">Edit tin bai [ID: {{tinbai.id_tin_bai}}]</h3>
+    </div>
+    <div class="modal-body">
+        <form enctype="multipart/form-data" name="product_form" class="form-horizontal" role="form" novalidate>
+            <form-element label="Tên danh mục" mod="tinbai">
+                <select name="id_danh_muc" ng-model="tinbai.id_danh_muc" >
+                    <option value="">---</option>
+                    <option ng-selected="tinbai.id_danh_muc==dm.id_danh_muc" ng-repeat="dm in danhmuc" value="{{dm.id_danh_muc}}">{{dm.ten_danh_muc}}</option>
+                </select>
+                
+            </form-element>
+            
+            <form-element label="Thứ tự hiển thị" mod="tinbai">
+                <table border="0" width="100%"><tr><td>
+                <input style="width:60px"  type="text" class="form-control" name="vi_tri" placeholder="Thứ tự" ng-model="tinbai.vi_tri" /></td><td>Menu trái </td><td>
+                <input type="checkbox" value="1" class="form-control" id="menu_trai" name="menu_trai" ng-model="tinbai.menu_trai" /></td></table>
+            </form-element>
+
+            <form-element label="Tên bài" mod="tinbai">
+                <textarea class="form-control" name="ten_bai" placeholder="Tên bài" ng-model="tinbai.ten_bai">{{tinbai.ten_bai}}</textarea>
+            </form-element>
+
+            <form-element label="Tiêu đề" mod="tinbai">
+                <textarea class="form-control" name="tieu_de" placeholder="Tiêu đề" ng-model="tinbai.tieu_de">{{tinbai.tieu_de}}</textarea>
+            </form-element>
+
+            <form-element label="Tóm tắt" mod="tinbai">
+                <textarea class="form-control" name="trich_yeu" placeholder="Tóm tắt" ng-model="tinbai.trich_yeu">{{tinbai.trich_yeu}}</textarea>
+            </form-element>
+
+            <form-element label="Ảnh lớn" mod="tinbai">
+                <input type="file" name="anh_lon" ng-model="tinbai.anh_lon" />
+            </form-element>
+
+            <form-element label="Ảnh nhỏ" mod="tinbai">
+                <input type="file" name="anh_nho" ng-model="tinbai.anh_nho" />
+            </form-element>
+
+            <form-element label="Ảnh menu trái" mod="tinbai">
+                <input type="file" name="anh_menu_trai" ng-model="tinbai.anh_menu_trai" />
+            </form-element>
+
+            <form-element label="Tình trạng" mod="tinbai">
+                <select name="tinh_trang" class="form-control" ng-model="tinbai.tinh_trang">
+                    <option value="1">Enable</option>
+                    <option value="0">Disable</option>
+                </select>
+                
+            </form-element>
+
+            <form-element label="Chi tiết" mod="tinbai">
+                
+            </form-element>
+
+                <textarea cols="80" class="ck-editor" name="chi_tiet" rows="10" ng-model="tinbai.chi_tiet">
+                {{tinbai.chi_tiet}}
+                </textarea>
+            
+
+            <div class="space"></div>
+            <div class="space-4"></div>
+            <div class="modal-footer">
+                <form-element label="">
+                    <div class="text-right">
+                        <a class="btn btn-sm" ng-click="cancel()"><i class="ace-icon fa fa-reply"></i>Cancel</a>
+                        <button ng-click="saveTinbai(tinbai);"
+                                class="btn btn-sm btn-primary"
+                                type="submit">
+                            <i class="ace-icon fa fa-check"></i>{{buttonText}}
+                        </button>
+                    </div>
+                </form-element>
+            </div>
+        </form>
+    </div>
+

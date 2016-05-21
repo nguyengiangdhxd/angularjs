@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  
+<h4 class="blog-post-title">Danh mục</h4>
+<hr/>
+<button type="button" class="btn btn-danger fa fa-plus" ng-click="open(danhmuc_new);">&nbsp;Thêm mới danh mục</button>
+
+<div class="table-responsive">
+<div class="panel panel-primary">
+  <div class="panel-heading">Danh mục
+      <div class="sw-search" >
+            <div class="nav-search" id="nav-search">
+                    Filter: <span class="input-icon">
+                        <input placeholder="Filter list ..." class="nav-search-input" ng-model="filterdanhmuc" ng-change="resetLimit();"  autocomplete="off" type="text" style="width:300px;" focus>
+                        <i class="search-icon fa fa-search nav-search-icon"></i>
+                    </span>
+            </div>
+        </div>
+    </div>
+  <div class="panel-body">
+    <table class="table table-striped table-bordered">
+    <tr ng-show="danhmuc.length==0"><td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
+    <tr ng-hide="danhmuc.length>-1"><td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Loading</td></tr>
+    
+    <tr><th ng-repeat="c in columns"><b>{{c.text}}</b></th></tr>
+
+    <tr ng-repeat="c in danhmuc | filter:filterdanhmuc | orderBy:'-id_danh_muc'" id="{{c.id_danh_muc}}" >
+        <td>{{c.ten_danh_muc}}</td><td>{{c.tieu_de}}</td><td>{{c.ten_danh_muc_cha}}</td>
+        <td>{{c.ten_tinh_trang}}</td><td><img src="{{c.anh}}" /></td>
+        <td style="width:100px">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default fa fa-edit" ng-click="open(c);"></button>
+              
+            </div>
+        </td>
+    </tr>
+    </table>
+</div>
+</div>
+</div>
+
+              

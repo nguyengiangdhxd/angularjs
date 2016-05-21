@@ -1,0 +1,80 @@
+   <style>
+    #nav-tab {
+        float: left;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background: #ccc;
+        border-bottom: 1px solid #999;
+    }
+
+    #nav-tab li { 
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+        
+    #nav-tab a {
+        float: left;
+        display: block;
+        padding: 6px 30px 6px 5px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 90%;
+        color: #666;
+        background: #ccc url(libs/tab/nav_slant.gif) no-repeat top right;
+    }
+        
+    #nav-tab #nav-tab-1 a {
+        padding-left: 20px;
+
+    }
+        
+    #nav-tab li a:hover {
+        color: #eb1818;
+    }
+
+    /* more */
+        
+    ul#more {
+        clear: left;
+        margin-top: 60px;
+    tab-header {padding:15px;border-bottom:1px solid #e5e5e5;min-height:16.42857143px;}
+   </style>
+
+   <button type="button" class="close" ng-click="cancel();">
+        <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+    </button>
+   <div class="modal-header" style="background: url(libs/tab/header_modal.png); background-size: 100% 100%;">
+        <h3 ><strong>Thông tin sản phẩm: {{tinbai_view.tieu_de}}</strong></h3> 
+    </div>
+    
+        <ul id="nav-tab">
+         <li id="nav-tab-2"><a style="color: {{mau1}};" href="" ng-click="selectTab(1)">Thông tin chi tiết</a></li>
+         <li id="nav-tab-3"><a style="color: {{mau2}};" href="" ng-click="selectTab(2)">Hình ảnh</a></li>
+         <li id="nav-tab-4"><a style="color: {{mau3}};" href="" ng-click="selectTab(3)">Hỗ trợ</a></li>
+        </ul>
+    <div style="clear:both">&nbsp;</div>
+    <div class="modal-body">
+        <div ng-show="tab_show==1" ng-bind-html="chi_tiet_tin" style="min-height: 300px"></div>
+        <div ng-show="tab_show==2" style="min-height: 300px">
+            <img ng-hide="tinbai_view.anh_lon ==null" style="max-width:100%" src="images/{{tinbai_view.anh_lon}}" title="{{tinbai_view.tieu_de}}" alt="{{tinbai_view.tieu_de}}" />    
+        </div> 
+        <div ng-show="tab_show==3" ng-bind-html="ho_tro" style="min-height: 300px"></div>  
+
+
+
+            <div class="space"></div>
+            <div class="space-4"></div>
+            <div class="modal-footer">
+                
+                    <div class="text-right">
+                        <a class="btn btn-sm" ng-click="cancel()"><i class="ace-icon fa fa-reply"></i>Cancel</a>
+                        
+                    </div>
+                
+            </div>
+        
+    </div>
+

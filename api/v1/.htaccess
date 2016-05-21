@@ -1,0 +1,20 @@
+RewriteEngine On 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteRule ^(header)$ %{ENV:BASE}header.php [QSA,L]
+RewriteRule ^(index)$ %{ENV:BASE}index.php [QSA,L]
+RewriteRule ^([logo]*)$ %{ENV:BASE}logo.php [QSA,L]
+RewriteRule ^([slide]*)$ %{ENV:BASE}slide.php [QSA,L]
+RewriteRule ^([danhmuc]*)/([tinbai]*)$ %{ENV:BASE}danhmuc.php [QSA,L]
+RewriteRule ^([danhmuc]*)$ %{ENV:BASE}danhmuc.php [QSA,L]
+RewriteRule ^([tinbai]*)$ %{ENV:BASE}tinbai.php [QSA,L]
+RewriteRule ^([tinbai]*)/([0-9]*)$ %{ENV:BASE}tinbai.php [QSA,L]
+
+RewriteRule ^([tinbai]*)/news/([0-9]*)$ %{ENV:BASE}tinbai.php [QSA,L]
+
+RewriteRule ^([tinbai]*)/danhmuc/([0-9]*)$ %{ENV:BASE}tinbai.php [QSA,L]
+
+RewriteRule ^([danhmuc]*)/([0-9]*)$ %{ENV:BASE}danhmuc.php [QSA,L]
+RewriteRule ^([footer]*)/([0-9]*)$ %{ENV:BASE}footer.php [QSA,L]
+RewriteRule ^([footer]*)$ %{ENV:BASE}footer.php [QSA,L]
+
+####RewriteRule ^([a-z0-9_]*)-tt([0-9]*)$ index.php?m=$1&id_thu_tuc=$2  [L]

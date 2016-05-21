@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+.breadcrumbs.breadcrumbs-flyout {
+	overflow:visible!important;
+	font-size:11px;
+	z-index:105!important;
+	margin-top:-5px;
+	position:relative;
+}
+#hero.scene7 .breadcrumbs.breadcrumbs-flyout {
+	z-index:5!important;
+}
+.breadcrumbs.breadcrumbs-flyout .flyout {
+	position:relative;
+	width:21px;
+	height:21px;
+	margin-right:2px;
+	z-index:10;
+}
+.breadcrumbs.breadcrumbs-flyout > * {
+	display:inline-block;
+	vertical-align:middle;
+}
+.breadcrumbs.breadcrumbs-flyout > ol > li:first-child a,
+.breadcrumbs.breadcrumbs-flyout >  ul > li:first-child a {
+	background:none!important;
+	padding-left:0!important;
+}
+.breadcrumbs.breadcrumbs-flyout > ol:after,
+.breadcrumbs.breadcrumbs-flyout >  ul:after {
+	content:"";
+	display:block;
+	height:0;
+	overflow:hidden;
+	clear:both;
+}
+.breadcrumbs.breadcrumbs-flyout .flyout p img {
+	vertical-align:middle;
+	background-image:url(icn-flyout-lightgrey.png);
+	background-repeat:no-repeat;
+}
+.style-dark .breadcrumbs.breadcrumbs-flyout .flyout p img,
+#ChooseProduct .breadcrumbs.breadcrumbs-flyout .flyout p img,
+.specs-all .breadcrumbs.breadcrumbs-flyout .flyout p img,
+.reviews-all .breadcrumbs.breadcrumbs-flyout .flyout p img {
+	background-image:url(icn-flyout-lightgrey.png);
+}
+.style-light .breadcrumbs.breadcrumbs-flyout .flyout p img,
+#categorybrowse-header .breadcrumbs.breadcrumbs-flyout .flyout p img,
+#categorybrowse-header .bgLight .breadcrumbs.breadcrumbs-flyout .flyout p img,
+#Learnarticle .breadcrumbs.breadcrumbs-flyout .flyout p img,
+#learncontent-header .breadcrumbs.breadcrumbs-flyout .flyout p img {
+	background-image:url(icn-flyout-lightgrey.png);
+}
+#categorybrowse-header .bgDark .breadcrumbs.breadcrumbs-flyout .flyout p img,
+.style-dark #learncontent-header .breadcrumbs.breadcrumbs-flyout .flyout p img {
+	background-image:url(icn-flyout-lightgrey.png);
+}
+.breadcrumbs.breadcrumbs-flyout .flyout.active p {
+	position:absolute;
+	top:0;
+	height:23px;
+	z-index:2;
+	background-color:#434343;
+}
+.breadcrumbs.breadcrumbs-flyout .flyout.active p img {
+	background-image:url(images/icn-flyout-lightgrey.png)!important;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+}
+.breadcrumbs.breadcrumbs-flyout .flyout dl {
+	position:absolute;
+	top:23px;
+	z-index:1;
+	box-shadow:0 0 2px 0 rgba(0,0,0,0.7);
+	display:none;
+}
+.breadcrumbs.breadcrumbs-flyout .flyout.active dl {
+	display:block;
+}
+.breadcrumbs.breadcrumbs-flyout .flyout dl dd {
+	font-size:11px;
+	white-space:nowrap;
+	background-color:#434343;
+	color:#9b9b9b;
+	border-top:1px solid #3a3a3a;
+}
+.breadcrumbs.breadcrumbs-flyout .flyout dl dd:first-child {
+	border-top:none;
+}
+.breadcrumbs.breadcrumbs-flyout .flyout dl dd > a,
+.breadcrumbs.breadcrumbs-flyout .flyout dl dd > span {
+	display:block;
+	padding:10px 15px;
+	font-weight:normal;
+}
+.breadcrumbs.breadcrumbs-flyout .flyout dl dd > a {
+	color:#fff;
+}
+.breadcrumbs.breadcrumbs-flyout .flyout dl dd > a:hover {
+	background-color:#313131;
+}

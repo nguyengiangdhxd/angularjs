@@ -1,0 +1,115 @@
+//<article class="slideshow"><div class="div_slide"><div class="slide_seemore"><a href="" target="blank"><span>Tìm hiểu thêm</span></a></div><a href="#"><img src="libs/default-hero-3.jpg" alt=""/></a></div></article>
+app.directive('formElement', function() {
+    return {
+        restrict: 'E',
+        transclude: true,
+        scope: {
+            label : "@",
+            model : "="
+        },
+        link: function(scope, element, attrs) {
+            scope.disabled = attrs.hasOwnProperty('disabled');
+            scope.required = attrs.hasOwnProperty('required');
+            scope.pattern = attrs.pattern || '.*';
+        },
+        template: '<div class="form-group"><label class="col-sm-3 control-label no-padding-right" >  {{label}}</label><div class="col-sm-7"><span class="block input-icon input-icon-right" ng-transclude></span></div></div>'
+      };
+        
+});
+
+app.directive('onlyNumbers', function() {
+    return function(scope, element, attrs) {
+        var keyCode = [8,9,13,37,39,46,48,49,50,51,52,53,54,55,56,57,96,97,98,99,100,101,102,103,104,105,110,190];
+        element.bind("keydown", function(event) {
+            if($.inArray(event.which,keyCode) == -1) {
+                scope.$apply(function(){
+                    scope.$eval(attrs.onlyNum);
+                    event.preventDefault();
+                });
+                event.preventDefault();
+            }
+
+        });
+    };
+});
+
+app.directive('focus', function() {
+    return function(scope, element) {
+        element[0].focus();
+    }      
+});
+app.directive('animateOnChange', function($animate) {
+  return function(scope, elem, attr) {
+      scope.$watch(attr.animateOnChange, function(nv,ov) {
+        if (nv!=ov) {
+              var c = 'change-up';
+              $animate.addClass(elem,c, function() {
+              $animate.removeClass(elem,c);
+          });
+        }
+      });  
+  }  
+});
+
+app.directive('ckEditor', [function () {
+return {
+    require: '?ngModel',
+    restrict: 'C',
+    link: function (scope, elm, attr, model) {
+        var isReady = false;
+        var data = [];
+        var ck = CKEDITOR.replace(elm[0],{
+            allowedContent: true
+        });
+
+        function setData() {
+            if (!data.length) {
+                return;
+            }
+
+            var d = data.splice(0, 1);
+            ck.setData(d[0] || '<span></span>', function () {
+                setData();
+                isReady = true;
+            });
+        }
+
+        ck.on('instanceReady', function (e) {
+            if (model) {
+                setData();
+            }
+        });
+
+        elm.bind('$destroy', function () {
+            ck.destroy(false);
+        });
+
+        if (model) {
+            ck.on('change', function () {
+                scope.$apply(function () {
+                    var data = ck.getData();
+                    if (data == '<span></span>') {
+                        data = null;
+                    }
+                    model.$setViewValue(data);
+                });
+            });
+
+            model.$render = function (value) {
+                if (model.$viewValue === undefined) {
+                    model.$setViewValue(null);
+                    model.$viewValue = null;
+                }
+
+                data.push(model.$viewValue);
+
+                if (isReady) {
+                    isReady = false;
+                    setData();
+                }
+            };
+        }
+
+    }
+};
+}]);

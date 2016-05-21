@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+<script type="text/javascript" id="www-widgetapi-script" src="./libs/www-widgetapi.js" async=""></script>
+<script src="./libs/bl_track_with_gcm.cgi" type="text/javascript"></script>
+<script type="text/javascript" async="" src="./libs/linkid.js"></script>
+<script type="text/javascript" async="" src="./libs/analytics.js"></script>
+<script type="text/javascript" async="" charset="utf-8" src="./libs/blade_track_gl.js"></script>
+<script type="text/javascript" async="" src="./libs/conversion_async.js"></script>
+
+<script async="" src="./libs/gtm.js"></script>
+<script async="" src="./libs/gtm(1).js"></script>
+
+<script type="text/javascript" src="./libs/categorybrowse-libs.js"></script>
+
+<link rel="stylesheet" href="./libs/common-libs.css" type="text/css">
+
+<link rel="stylesheet" href="./libs/categorybrowse-libs.css" type="text/css">
+	<link rel="stylesheet" href="./libs/breadcrumbs-flyout.css" type="text/css">
+<script type="text/javascript" src="./libs/breadcrumbs-flyout.js"></script>
+
+<script type="text/javascript" src="./libs/jquery.js"></script>
+<script type="text/javascript" src="./libs/common-clientlibs.js"></script>
+<script type="text/javascript" src="./libs/common-libs.js"></script>
+<script type="text/javascript" src="./libs/dynamicHomepage-libs.js"></script>
+
+<link rel="stylesheet" href="./libs/common-libs.css" type="text/css">
+<link rel="stylesheet" href="./libs/slide2.css" type="text/css">
+<link rel="stylesheet" href="./libs/dynamicHomepage-libs.css" type="text/css">
+<script type="text/javascript" src="./libs/announcements.js"></script>
+<link href="./libs/panasonic-global-content-vn-vi.css" rel="stylesheet" type="text/css">
+
+<link href="./css/footer-style.css" rel="stylesheet" type="text/css">
+
+<link rel="icon" href="./libs/envie.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./libs/envie.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./libs/envie.ico" type="image/vnd.microsoft.icon">
+<title ng-bind="title">envie</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript">
+//<![CDATA[
+if((navigator.userAgent.indexOf("iPhone") != -1)||((navigator.userAgent.indexOf("Android") != -1)&&(navigator.userAgent.indexOf("Mobile") != -1))||(navigator.userAgent.indexOf('iPod')  !=-1)){
+}else{
+ document.write('<meta name="viewport" content="width=980"/>');
+}
+//]]>
+</script>
+<meta name="viewport" content="width=980">
+
+<meta property="og:title" content="Envie">
+<meta property="og:type" content="article"></head>
+
+<body >
+<div id="page">
+  <!--header ------------------>
+  <header-directive></header-directive>
+  <!-- end header ------------------>
+
+  
+  <div ng-view="" id="ng-view"></div>
+
+<!--end #homepage-->   
+
+  <div ng-include="'views/common/footer.html'"></div>
+</div><!-- page -->
+
+<!-- Libraries -->
+<script type="text/javascript" src="./libs/common-libs.js"></script>
+
+<script src="js/angular.min.js"></script>
+<script src="js/ui-bootstrap-tpls-0.11.2.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script src="js/angular-sanitize.js"></script>
+<script src="js/angular-animate.min.js"></script>
+
+<!-- AngularJS custom codes -->
+<script src="app/app.js"></script>
+<script src="app/services/data.js"></script>
+<script src="app/services/danhmuc.js"></script>
+<script src="app/services/header.js"></script>
+<script src="app/services/view.js"></script>
+<script src="app/services/logo.js"></script>
+<script src="app/services/slide.js"></script>
+<script src="app/services/tinbai.js"></script>
+<script src="app/services/footer.js"></script>
+
+<script src="app/directives/directives.js"></script>
+<script src="app/directives/headerDirective.js"></script>
+<script src="app/directives/viewDirective.js"></script>
+
+<script src="app/controllers/danhmucCtrl.js"></script>
+<script src="app/controllers/headerCtrl.js"></script>
+<script src="app/controllers/viewCtrl.js"></script>
+<script src="app/controllers/tinbaiCtrl.js"></script>
+<script src="app/controllers/newsCtrl.js"></script>
+<script src="app/controllers/searchCtrl.js"></script>
+<script src="app/controllers/homeCtrl.js"></script>
+<script src="app/controllers/footerCtrl.js"></script>
+
+
+
+<!-- Some Bootstrap Helper Libraries -->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/underscore.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>

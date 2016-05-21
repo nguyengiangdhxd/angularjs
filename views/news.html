@@ -1,0 +1,80 @@
+
+<div class="parbase browsebar">
+	<div id="browsebar-wrapper">
+    <div id="browsebar" class="">
+    	<div id="browsebar-in">
+        <div class="container">
+            <div id="browsebar-name">
+                <h1 class="name">{{danhmuc_news['ten_danh_muc']}}</h1>
+                
+            </div>
+            
+            </div>  
+        </div>
+        <!--end #browsebar-buyslide--> 
+    </div>
+	</div>
+
+<div id="results-contents">
+<div class="category-products">
+	
+	<style>
+		.left 
+		{
+			float: left;
+			font-size: 12px;
+			width: 236px;
+			padding-top:30px;
+		   
+		}
+		.center_right
+		{
+			border-radius: 5px 5px 0px 0px;
+			margin:0 0 0 50px;
+			float:left;
+			max-width: 70%;
+			padding-top:30px;
+		}
+	</style>
+    <div class="left" style="padding: 0;">
+        
+		<a href="#/" title="Bảng giá trọn gói camera" style="margin: 20px 0px; display: block; border: 1px solid #ccc;"><img alt="Bảng giá trọn gói camera" width="234" src="./cameralib/Ban quang cao3.png"></a>
+    
+		<a href="#/" title="Qang cao 2" style="margin: 20px 0px; display: block; border: 1px solid #ccc;"><img alt="Qang cao 2" width="234" src="./cameralib/quang cao4.png"></a>
+		
+		<a href="#/" title="Qang cao 3" style="margin: 20px 0px; display: block; border: 1px solid #ccc;"><img alt="Qang cao 3" width="234" src="./cameralib/1386955785547017054.jpg"></a>
+		
+		<a href="#/" title="Tuyển dụng" style="margin: 20px 0px; display: block; border: 1px solid #ccc;"><img alt="Tuyển dụng" width="234" src="./cameralib/banner_aab32389.jpg"></a>
+		
+</div>
+	
+	<div ng-if="tong_news==1" class="center_right" >
+		<div ng-bind-html="chi_tiet"> </div>
+		
+	</div>
+
+	<div ng-if="tong_news > 1" class="center_right" >
+		<div ng-repeat="tin in tinbai_news"> 
+			<div style="max-width:90%; ">
+				<div style="float:left;width:130px">
+						<a href="#/new-{{tin.id_tin_bai}}/{{tin.tieu_de_khong_dau}}">
+							<img width="120" height="90" src="images/{{tin.anh_nho}}" alt="{{tin.tieu_de}}" title="{{tin.tieu_de}}" />
+						</a>
+					</div>
+					<div >
+						<div><a href="#/new-{{tin.id_tin_bai}}/{{tin.tieu_de_khong_dau}}">{{tin.tieu_de}}</a></div><br>
+						<div>{{tin.trich_yeu}}</div>
+					</div>
+				
+			</div>
+			<div style="clear: both">&nbsp;</div>
+		</div>
+	
+	</div>
+
+	
+
+</div>
+</div>
+
+</div>
